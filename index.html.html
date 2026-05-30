@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>मे. संजय जनार्दन पाटणकर</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#fffdf8;
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    .navbar{
+      width:100%;
+      padding:18px 8%;
+      background:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#b65f5f;
+    }
+
+    .navbar ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    .navbar ul li a{
+      text-decoration:none;
+      color:#444;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .navbar ul li a:hover{
+      color:#d67d7d;
+    }
+
+    .hero{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:80px 8%;
+      background:
+      linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)),
+      url('1000767037.jpg');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero-content h1{
+      font-size:55px;
+      color:#9b4f4f;
+      margin-bottom:20px;
+    }
+
+    .hero-content p{
+      font-size:20px;
+      max-width:800px;
+      margin:auto;
+      line-height:1.8;
+      color:#555;
+    }
+
+    .hero-btns{
+      margin-top:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 28px;
+      margin:10px;
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn-primary{
+      background:#d88989;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#bf6c6c;
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:#d88989;
+      border:2px solid #d88989;
+    }
+
+    .btn-secondary:hover{
+      background:#d88989;
+      color:white;
+    }
+
+    section{
+      padding:80px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:40px;
+      color:#b65f5f;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#666;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .about-text p{
+      font-size:17px;
+      line-height:1.9;
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    .services{
+      background:#fff7f7;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .service-card{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .service-card h3{
+      margin:15px 0;
+      color:#b65f5f;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+
+    .gallery-grid img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      border-radius:18px;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .gallery-grid img:hover{
+      transform:scale(1.03);
+    }
+
+    .contact-section{
+      background:#fff7f2;
+    }
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:40px;
+    }
+
+    .contact-info{
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .contact-info h3{
+      margin-bottom:20px;
+      color:#b65f5f;
+      font-size:28px;
+    }
+
+    .contact-info p{
+      margin-bottom:18px;
+      color:#555;
+      line-height:1.7;
+    }
+
+    .contact-form{
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:14px;
+      margin-bottom:18px;
+      border:1px solid #ddd;
+      border-radius:12px;
+      outline:none;
+      font-size:15px;
+    }
+
+    .contact-form textarea{
+      resize:none;
+      height:120px;
+    }
+
+    .contact-form button{
+      background:#d88989;
+      color:white;
+      border:none;
+      padding:14px 25px;
+      border-radius:30px;
+      cursor:pointer;
+      font-size:16px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .contact-form button:hover{
+      background:#bf6c6c;
+    }
+
+    .whatsapp{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      background:#25D366;
+      color:white;
+      width:65px;
+      height:65px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:32px;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
+      z-index:1000;
+    }
+
+    footer{
+      background:#b65f5f;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+
+      .navbar{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      .navbar ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-content h1{
+        font-size:38px;
+      }
+
+      .hero-content p{
+        font-size:17px;
+      }
+
+      .section-title h2{
+        font-size:30px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">मे. संजय जनार्दन पाटणकर</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Products</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>आपल्या विश्वासाचं कपड्यांचं दुकान</h1>
+
+      <p>
+        रेडिमेड कपडे, साड्या, शुटिंग-शर्टिंग, महिलांसाठी,
+        पुरुषांसाठी, मुलं-मुलींसाठी आकर्षक ड्रेस आणि
+        उत्तम कलेक्शन एकाच ठिकाणी.
+      </p>
+
+      <div class="hero-btns">
+
+        <a href="https://wa.me/919890573951" class="btn btn-primary">
+          WhatsApp Enquiry
+        </a>
+
+        <a href="#gallery" class="btn btn-secondary">
+          Shop Gallery
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="about">
+
+    <div class="section-title">
+      <h2>आमच्याबद्दल</h2>
+      <p>Lonand मधील विश्वासार्ह कपड्यांचं दुकान</p>
+    </div>
+
+    <div class="about">
+
+      <img src="C:\Users\NOKIA\OneDrive\Desktop\website\images/dukan.jpeg" alt="Shop Image">
+
+      <div class="about-text">
+
+        <p>
+          मे. संजय जनार्दन पाटणकर हे पुणे-सातारा रोड,
+          ICICI Bank जवळ, Lonand येथे असलेले एक
+          प्रोफेशनल कपड्यांचे दुकान आहे.
+        </p>
+
+        <p>
+          आमच्याकडे Ready-made कपडे, Sarees,
+          Shooting-Shirting, Kids Wear, Men Wear,
+          Women Wear आणि Girls & Boys साठी
+          आकर्षक कलेक्शन उपलब्ध आहे.
+        </p>
+
+        <p>
+          उत्तम गुणवत्ता, आकर्षक डिझाईन्स आणि योग्य
+          किमतीमुळे ग्राहकांचा आमच्यावर विश्वास आहे.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+<section id="owner">
+
+  <div class="section-title">
+    <h2>आमचे संस्थापक</h2>
+    <p>ग्राहकांचा विश्वास जपणारे व्यक्तिमत्त्व</p>
+  </div>
+
+  <div class="about">
+
+    <img src="C:\Users\NOKIA\OneDrive\Desktop\website\images/man.jpeg" alt="संजय जनार्दन पाटणकर">
+
+    <div class="about-text">
+
+      <h3 style="color:#b65f5f; margin-bottom:15px;">
+        श्री. संजय जनार्दन पाटणकर
+      </h3>
+
+      <p>
+        मे. संजय जनार्दन पाटणकर हे या प्रतिष्ठित कपड्यांच्या
+        व्यवसायाचे संस्थापक असून त्यांच्या साधेपणा,
+        प्रामाणिकपणा आणि मनमिळावू स्वभावामुळे ग्राहकांमध्ये
+        त्यांना विशेष मान आहे.
+      </p>
+
+      <p>
+        अनेक वर्षांपासून ते ग्राहकांना उत्तम दर्जाचे कपडे,
+        योग्य किंमत आणि उत्कृष्ट सेवा देण्याचा प्रयत्न करत आहेत.
+        प्रत्येक ग्राहकाला कुटुंबातील सदस्याप्रमाणे वागणूक देणे
+        ही त्यांच्या व्यवसायाची खास ओळख आहे.
+      </p>
+
+      <p>
+        त्यांच्या मार्गदर्शनाखाली काम करणारा आमचा संपूर्ण स्टाफ
+        देखील अत्यंत नम्र, मदतशील आणि ग्राहकाभिमुख आहे.
+        ग्राहकांच्या गरजा समजून घेऊन त्यांना योग्य पर्याय
+        सुचवणे आणि आनंददायी खरेदीचा अनुभव देणे हे आमच्या
+        टीमचे प्रमुख ध्येय आहे.
+      </p>
+
+      <p>
+        ग्राहकांचा विश्वास, गुणवत्ता आणि उत्तम सेवा या तीन
+        गोष्टींवर उभा असलेला हा व्यवसाय आज परिसरातील
+        विश्वासार्ह कपड्यांच्या दुकानांपैकी एक म्हणून ओळखला जातो.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+  <section class="services" id="services">
+
+    <div class="section-title">
+      <h2>Our Collections</h2>
+      <p>सर्वांसाठी आकर्षक कपड्यांचे कलेक्शन</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <h3>👗 Sarees</h3>
+        <p>सुंदर आणि आकर्षक साड्यांचे नवीन डिझाईन्स</p>
+      </div>
+
+      <div class="service-card">
+        <h3>👔 Men Wear</h3>
+        <p>शर्ट, टी-शर्ट, शुटिंग-शर्टिंग आणि रेडिमेड कपडे</p>
+      </div>
+
+      <div class="service-card">
+        <h3>🧒 Kids Wear</h3>
+        <p>मुलं आणि मुलींसाठी ट्रेंडी कपड्यांचे कलेक्शन</p>
+      </div>
+
+      <div class="service-card">
+        <h3>👚 Women Fashion</h3>
+        <p>ड्रेसेस, फॅशन वेअर आणि स्टायलिश कलेक्शन</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="gallery">
+
+<div class="section-title">
+<h2>आमचे शोरूम</h2>
+<p>दुकानातील काही आकर्षक क्षण</p>
+</div>
+
+<div class="slider">
+
+<div class="slide-track">
+
+<img src="C:\Users\NOKIA\OneDrive\Desktop\website\images/entry.jpeg">
+<img src="C:\Users\NOKIA\OneDrive\Desktop\website\images/malak.jpeg">
+<img src="C:\Users\NOKIA\OneDrive\Desktop\website\images/2nd floor.jpeg">
+<img src="C:\Users\NOKIA\OneDrive\Desktop\website\images/floor2.jpeg">
+<img src="C:\Users\NOKIA\OneDrive\Desktop\website\images/floor.jpeg">
+
+<img src="C:\Users\NOKIA\OneDrive\Desktop\website\images/floor3.jpeg">
+</div>
+
+</div>
+
+</section>  <section class="contact-section" id="contact">
+
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>आमच्याशी संपर्क साधा</p>
+    </div>
+
+    <div class="contact-wrapper">
+
+      <div class="contact-info">
+
+        <h3>Store Information</h3>
+
+        <p>
+          <strong>📍 Address:</strong><br>
+          Pune Satara Road Near ICICI Bank,<br>
+          Lonand - 415521
+        </p>
+
+        <p>
+          <strong>📞 Mobile:</strong><br>
+          9890573951
+        </p>
+
+        <p>
+          <strong>🛍️ Available:</strong><br>
+          Ready-made, Saree, Shooting-Shirting,
+          Dresses, Kids Wear, Men Wear,
+          Women Wear
+        </p>
+
+        <a href="https://wa.me/919890573951" class="btn btn-primary">
+          Chat on WhatsApp
+        </a>
+
+      </div>
+
+      <div class="contact-form">
+
+        <form>
+
+          <input type="text" placeholder="Your Name" required>
+
+          <input type="tel" placeholder="Mobile Number" required>
+
+          <input type="text" placeholder="What are you looking for?">
+
+          <textarea placeholder="Your Enquiry"></textarea>
+
+          <button type="submit">
+            Send Enquiry
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 मे. संजय जनार्दन पाटणकर | All Rights Reserved
+  </footer>
+
+  <a href="https://wa.me/919890573951" class="whatsapp">
+    ☎️
+  </a>
+
+</body>
+</html>
